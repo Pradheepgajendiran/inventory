@@ -1,0 +1,27 @@
+.cat-form {
+    background-color: #0047ab;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .cat-save {
+    color: white;
+    background-color: black;
+    margin-left: 30%; /* Adjust as needed */
+  }
+  
+  .cat-list {
+    background-color: #0047ab;
+    color: white;
+    border-radius: 5px;
+  }
+
+  
+  
+  /* Additional CSS for responsiveness */
+  @media (max-width: 767px) {
+    .cat-list {
+      margin-top: 20px; /* Adjust as needed */
+    }
+  }
+  

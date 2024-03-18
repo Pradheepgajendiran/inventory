@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Page</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="container cat-form p-5">
+          <h2 class="mb-4">Category</h2>
+          <form class="form" [formGroup]="categoryform" (ngSubmit)="onsave()">
+            <div class="mb-3">
+              <label for="categoryName" class="form-label">Category</label>
+              <input
+                type="text"
+                class="form-control"
+                id="categoryName"
+                placeholder="Enter category name"
+                formControlName="categoryname"
+                [ngClass]="{
+                  'is-invalid':
+                    categoryname &&
+                    categoryname.invalid &&
+                    categoryname.touched
+                }"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="
+                  categoryname && categoryname.invalid && categoryname.touched
+                "
+              >
+                <div class="req" *ngIf=" categoryname.errors?.['required']">
+                  Please Enter Category name..
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="categoryImage" class="form-label">Image</label>
+              <!-- <input
+                class="form-control file-input"
+                type="file"
+                id="categoryImage"
+                aria-label="upload"
+
+                formControlName="uploadimg"
+              /> -->
+              <input
+                type="text"
+                class="form-control"
+                id="uploadimg"
+                placeholder="Enter category Image URL"
+                formControlName="uploadimg"
+                [ngClass]="{
+                  'is-invalid':
+                  uploadimg &&
+                  uploadimg.invalid &&
+                  uploadimg.touched
+                }"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="uploadimg && uploadimg.invalid && uploadimg.touched"
+              >
+                <div class="req" *ngIf=" uploadimg.errors?.['required']">
+                  Please Upload Category Image...
+                </div>
+              </div>
+            </div>
+            <button type="submit"  class="btn cat-save">{{saveText}}</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-md-2"></div>
+
+      
+    </div>
+  </div>
+</body>
+</html>
+
+

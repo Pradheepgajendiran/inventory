@@ -1,0 +1,61 @@
+.cat-form {
+    background-color: #0047ab;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  
+  
+  .cat-list {
+    background-color: #0047ab;
+    color: white;
+    border-radius: 5px;
+    width: 70%;
+  }
+
+  table.scrolldown {
+    width: 100%;
+    border-spacing: 0;
+    border: 1px solid black;
+ }
+     
+//  table.scrolldown tbody, table.scrolldown thead {
+//     display: block;
+//  }   
+     
+//  table.scrolldown tbody {
+//     height: 700px; 
+//     overflow-y: auto;
+//     overflow-x: hidden; 
+//  }
+     
+ tbody { 
+    border-top: 2px solid black;
+ }
+     
+ tbody td {
+    width : 200px;
+    border-right: 1px solid black;
+ }
+ td {
+    text-align:center;
+ }
+  
+  
+  /* Additional CSS for responsiveness */
+  @media (max-width: 767px) {
+    .cat-list {
+      margin-top: 20px; /* Adjust as needed */
+    }
+  }
+  .thead th{
+    text-align: center;
+    background-color: #0047ab;
+    color: white;
+    
+  }
+
+  .cat-ed{
+    color: #0047ab;
+  }
+  

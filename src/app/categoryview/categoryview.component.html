@@ -1,0 +1,26 @@
+<div class="container cat-list">
+  <h2 class="mt-5">Categories List</h2>
+  <div class="table-responsive cat-tbl1">
+    <table class="table cat-tbl scrolldown">
+      <thead class="thead">
+        <tr>
+          <th>Category ID</th>
+          <th>Category Name</th>
+          <th>Upload Image</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories; let i = index">
+          <td>{{ category.categoryId }}</td>
+          <td>{{ category.categoryName }}</td>
+          <td>{{ category.categoryImg }}</td>
+          <td>
+            <button type="button" class="btn cat-ed" [routerLink]="'/category'" [queryParams]="{catId:category.categoryId}"><i class="fa fa-edit"></i></button>
+            <button type="button" class="btn cat-ed " (click)="DeleteCategory(category.categoryId)" ><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

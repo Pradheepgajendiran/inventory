@@ -1,0 +1,40 @@
+
+
+.card1{
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.708);
+}
+
+
+
+.carousel-img{
+    height: 455px;
+    width: 450px;
+}
+
+body{
+   background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+   min-height: 100vh; 
+   background-position: center;
+  //background: #000;
+}   
+.form-card{
+   
+    height: 455px;
+    width: 400px;
+       
+    color: #0047ab;
+    background-color: #E9E9E9;
+}
+
+.forgot-btn{
+    color: #0047ab;
+}
+.login-btn{
+    background-color: #0047ab;
+    color: #E9E9E9;
+}
+.req{
+    color: red;
+    font-size: smaller;
+}

@@ -1,0 +1,36 @@
+<div class="container cat-list">
+    <h2 class="mt-5">Products List</h2>
+    <div class="table-responsive cat-tbl1">
+      <table class="table cat-tbl scrolldown">
+        <thead class="thead">
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Product Description</th>
+            <th>Category Name</th>
+            <th>MRP Price</th>
+            <th>Sale Price</th>
+            <th>Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Products of products;">
+            <td>{{ Products.productId }}</td>
+            <td>{{ Products.productName }}</td>
+            <td>{{ Products.productImg }}</td>
+            <td>{{Products.productDescription}}</td>
+            <td>{{Products.categoryName}}</td>
+            <td>{{Products.mrpPrice}}</td>
+            <td>{{Products.salePrice}}</td>
+
+            <td>
+              <button type="button" class="btn cat-ed"[routerLink]="'/product'" [queryParams]="{prodId:Products.productId}" ><i class="fa fa-edit"></i></button>
+              <button type="button" class="btn cat-ed " ><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

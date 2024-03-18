@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System</title>
+  </head>
+  <body>
+    <div class="container prod-container">
+      <h2 class="text-center mt-4 mb-4">Add Product</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <form class="p-3" [formGroup]="productform" (ngSubmit)="onsave()">
+            <div class="form-group m-3">
+              <label for="productName">Product Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                placeholder="Enter product name"
+                formControlName="prod_name"
+                [ngClass]="{
+                  'is-invalid': prod_name.invalid && prod_name.touched
+                }"
+              />
+
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_name.invalid && prod_name.touched"
+              >
+                <div class="req" *ngIf=" prod_name.errors?.['required']">
+                  Please Enter Product name..
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group m-3">
+              <label for="productDescription">Product Description</label>
+              <textarea
+                class="form-control"
+                id="productDescription"
+                rows="3"
+                placeholder="Enter product description"
+                formControlName="prod_description"
+                [ngClass]="{
+                  'is-invalid':
+                    prod_description.invalid && prod_description.touched
+                }"
+              >
+              </textarea>
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_description.invalid && prod_description.touched"
+              >
+                <div class="req" *ngIf=" prod_description.errors?.['required']">
+                  Please Enter Description name..
+                </div>
+              </div>
+            </div>
+            <div class="form-group m-3">
+              <label for="productImage">Product Image</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productImage"
+                placeholder="Image url"
+                formControlName="prod_img"
+              />
+
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_img.invalid && prod_img.touched"
+              >
+                <div class="req" *ngIf="  prod_img.errors?.['required']">
+                  Please Upload Product Image...
+                </div>
+              </div>
+            </div>
+            <div class="form-group m-3">
+              <label for="productCategory">Category</label>
+              <select
+                class="form-control"
+                id="productCategory"
+                formControlName="prod_category"
+                [ngClass]="{
+                  'is-invalid': prod_category.invalid && prod_category.touched
+                }"
+              >
+                <option value="" disabled selected>
+                  Select Product Category
+                </option>
+
+                <option
+                  *ngFor="let category_details of cat_details"
+                  [value]="category_details.categoryId"
+                >
+                  {{ category_details.categoryName }}
+                </option>
+              </select>
+
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_category.invalid && prod_category.touched"
+              >
+                <div class="req" *ngIf="prod_category.errors?.['required']">
+                  Please select Product Category
+                </div>
+              </div>
+            </div>
+            <div class="form-group m-3">
+              <label for="productMRP">MRP</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productMRP"
+                placeholder="Enter MRP"
+                formControlName="prod_mrp"
+                [ngClass]="{
+                  'is-invalid': prod_mrp.invalid && prod_mrp.touched
+                }"
+              />
+
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_mrp.invalid && prod_mrp.touched"
+              >
+                <div class="req" *ngIf="prod_mrp.errors?.['required']">
+                  Give MRP Price....
+                </div>
+              </div>
+            </div>
+            <div class="form-group m-3">
+              <label for="productSalesPrice">Sales Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productSalesPrice"
+                placeholder="Enter sales price"
+                formControlName="prod_salesprice"
+                [ngClass]="{
+                  'is-invalid':
+                    prod_salesprice.invalid && prod_salesprice.touched
+                }"
+              />
+
+              <div
+                class="alert alert-danger"
+                *ngIf="prod_salesprice.invalid && prod_salesprice.touched"
+              >
+                <div class="req" *ngIf="prod_salesprice.errors?.['required']">
+                  Give MRP Price....
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn prod_button">{{savetext}}</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </body>
+</html>
